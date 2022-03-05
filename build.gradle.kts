@@ -10,7 +10,7 @@ plugins {
 }
 
 group = "uno.d1s"
-version = "0.0.1-alpha.0"
+version = "1.0.0-stable.0"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
