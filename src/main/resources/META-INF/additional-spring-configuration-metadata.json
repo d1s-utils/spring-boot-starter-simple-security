@@ -1,0 +1,17 @@
+{
+  "properties": [
+    {
+      "name": "simple-security.enabled",
+      "type": "java.lang.String",
+      "description": "Whether to enable simple security.",
+      "sourceType": "uno.d1s.security.properties.SimpleSecurityConfigurationProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "simple-security.authenticationSecret",
+      "type": "java.lang.String",
+      "description": "Authentication credentials for this application.",
+      "sourceType": "uno.d1s.security.properties.SimpleSecurityConfigurationProperties"
+    }
+  ]
+}
