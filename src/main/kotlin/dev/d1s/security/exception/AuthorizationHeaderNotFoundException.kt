@@ -1,4 +1,4 @@
-package uno.d1s.security.exception
+package dev.d1s.security.exception
 
 import org.springframework.security.core.AuthenticationException
 

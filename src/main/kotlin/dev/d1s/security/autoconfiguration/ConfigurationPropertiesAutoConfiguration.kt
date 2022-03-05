@@ -1,8 +1,8 @@
-package uno.d1s.security.autoconfiguration
+package dev.d1s.security.autoconfiguration
 
 import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Configuration
-import uno.d1s.security.properties.SimpleSecurityConfigurationProperties
+import dev.d1s.security.properties.SimpleSecurityConfigurationProperties
 
 @Configuration
 @EnableConfigurationProperties(SimpleSecurityConfigurationProperties::class)

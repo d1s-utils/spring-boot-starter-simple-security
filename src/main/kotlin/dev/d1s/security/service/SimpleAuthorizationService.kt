@@ -1,4 +1,4 @@
-package uno.d1s.security.service
+package dev.d1s.security.service
 
 public interface SimpleAuthorizationService {
 

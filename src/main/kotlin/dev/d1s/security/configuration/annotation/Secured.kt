@@ -1,4 +1,4 @@
-package uno.d1s.security.configuration.annotation
+package dev.d1s.security.configuration.annotation
 
 @Target(AnnotationTarget.FUNCTION)
 @Retention(AnnotationRetention.RUNTIME)

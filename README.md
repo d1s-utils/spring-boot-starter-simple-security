@@ -11,7 +11,7 @@ repositories {
     maven(url = "https://jitpack.io")
 }
 
-implementation("uno.d1s:spring-boot-starter-simple-security:{spring-boot-starter-simple-security version}")
+implementation("dev.d1s:spring-boot-starter-simple-security:{spring-boot-starter-simple-security version}")
 ```
 
 ### Example usage

@@ -1,6 +1,10 @@
-package uno.d1s.security.service
+package dev.d1s.security.service
 
 import com.ninjasquad.springmockk.MockkBean
+import dev.d1s.security.properties.SimpleSecurityConfigurationProperties
+import dev.d1s.security.service.impl.SimpleAuthorizationServiceImpl
+import dev.d1s.teabag.testing.constant.INVALID_STUB
+import dev.d1s.teabag.testing.constant.VALID_STUB
 import io.mockk.every
 import io.mockk.verify
 import org.junit.jupiter.api.BeforeEach
@@ -11,10 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.security.authentication.BadCredentialsException
 import org.springframework.test.context.ContextConfiguration
-import uno.d1s.security.properties.SimpleSecurityConfigurationProperties
-import uno.d1s.security.service.impl.SimpleAuthorizationServiceImpl
-import uno.d1s.teabag.testing.constant.INVALID_STUB
-import uno.d1s.teabag.testing.constant.VALID_STUB
 
 @SpringBootTest
 @ContextConfiguration(classes = [SimpleAuthorizationServiceImpl::class])

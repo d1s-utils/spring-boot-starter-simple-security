@@ -1,4 +1,4 @@
-package uno.d1s.security.aop
+package dev.d1s.security.aop
 
 import com.ninjasquad.springmockk.MockkBean
 import io.mockk.every
@@ -12,13 +12,13 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.security.authentication.BadCredentialsException
 import org.springframework.test.context.ContextConfiguration
-import uno.d1s.security.exception.AuthorizationHeaderNotFoundException
-import uno.d1s.security.service.SimpleAuthorizationService
-import uno.d1s.teabag.testing.constant.INVALID_STUB
-import uno.d1s.teabag.testing.constant.VALID_STUB
-import uno.d1s.teabag.testing.mockRequest
-import uno.d1s.teabag.web.currentRequest
-import uno.d1s.teabag.web.headers
+import dev.d1s.security.exception.AuthorizationHeaderNotFoundException
+import dev.d1s.security.service.SimpleAuthorizationService
+import dev.d1s.teabag.testing.constant.INVALID_STUB
+import dev.d1s.teabag.testing.constant.VALID_STUB
+import dev.d1s.teabag.testing.mockRequest
+import dev.d1s.teabag.web.currentRequest
+import dev.d1s.teabag.web.headers
 
 @SpringBootTest
 @ContextConfiguration(classes = [SecuredControllerMethodAspect::class])
@@ -80,8 +80,8 @@ internal class SecuredControllerMethodAspectTest {
     }
 
     private inline fun mockCurrentRequestAndHeaders(block: () -> Unit) {
-        mockkStatic("uno.d1s.teabag.web.CurrentRequestKt") {
-            mockkStatic("uno.d1s.teabag.web.HeadersKt") {
+        mockkStatic("dev.d1s.teabag.web.CurrentRequestKt") {
+            mockkStatic("dev.d1s.teabag.web.HeadersKt") {
                 every {
                     currentRequest
                 } returns mockRequest

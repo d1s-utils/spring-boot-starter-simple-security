@@ -1,13 +1,13 @@
-package uno.d1s.security.aop
+package dev.d1s.security.aop
 
 import org.aspectj.lang.annotation.Aspect
 import org.aspectj.lang.annotation.Before
 import org.aspectj.lang.annotation.Pointcut
 import org.springframework.beans.factory.annotation.Autowired
-import uno.d1s.security.exception.AuthorizationHeaderNotFoundException
-import uno.d1s.security.service.SimpleAuthorizationService
-import uno.d1s.teabag.web.currentRequest
-import uno.d1s.teabag.web.headers
+import dev.d1s.security.exception.AuthorizationHeaderNotFoundException
+import dev.d1s.security.service.SimpleAuthorizationService
+import dev.d1s.teabag.web.currentRequest
+import dev.d1s.teabag.web.headers
 
 @Aspect
 internal class SecuredControllerMethodAspect {
@@ -19,7 +19,7 @@ internal class SecuredControllerMethodAspect {
     @Autowired
     private lateinit var simpleAuthorizationService: SimpleAuthorizationService
 
-    @Pointcut("@annotation(uno.d1s.security.configuration.annotation.Secured)")
+    @Pointcut("@annotation(dev.d1s.security.configuration.annotation.Secured)")
     private fun securedMethodExecution() {
     }
 

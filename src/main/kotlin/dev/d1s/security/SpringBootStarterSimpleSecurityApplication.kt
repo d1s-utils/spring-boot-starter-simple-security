@@ -1,4 +1,4 @@
-package uno.d1s.security
+package dev.d1s.security
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

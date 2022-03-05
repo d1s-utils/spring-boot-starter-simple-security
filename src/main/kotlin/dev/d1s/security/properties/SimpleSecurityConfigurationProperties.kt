@@ -1,4 +1,4 @@
-package uno.d1s.security.properties
+package dev.d1s.security.properties
 
 import org.springframework.boot.context.properties.ConfigurationProperties
 import org.springframework.validation.annotation.Validated

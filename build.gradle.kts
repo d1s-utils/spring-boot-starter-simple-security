@@ -9,8 +9,8 @@ plugins {
     kotlin("plugin.spring") version "1.6.10"
 }
 
-group = "uno.d1s"
-version = "1.0.0-stable.0"
+group = "dev.d1s"
+version = "2.0.0-stable.0"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
@@ -23,7 +23,7 @@ val springMockkVersion: String by project
 val striktVersion: String by project
 
 dependencies {
-    implementation("uno.d1s.teabags:teabag-spring-web:$teabagsVersion")
+    implementation("dev.d1s.teabags:teabag-spring-web:$teabagsVersion")
     implementation("org.springframework.boot:spring-boot-starter-aop")
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.boot:spring-boot-starter-web")
@@ -32,7 +32,7 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    testImplementation("uno.d1s.teabags:teabag-testing:$teabagsVersion")
+    testImplementation("dev.d1s.teabags:teabag-testing:$teabagsVersion")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("com.ninja-squad:springmockk:$springMockkVersion")
     testImplementation("io.strikt:strikt-jvm:$striktVersion")
