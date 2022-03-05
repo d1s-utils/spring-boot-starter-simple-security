@@ -27,6 +27,7 @@ simple-security:
 class SimpleRestController {
 
     @Secured
+    @GetMapping("/")
     fun sayHello() = "Hello!"
 }
 ```
