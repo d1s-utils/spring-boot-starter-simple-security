@@ -10,7 +10,7 @@ plugins {
 }
 
 group = "dev.d1s"
-version = "2.0.12-stable.0"
+version = "2.0.13-stable.0"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
