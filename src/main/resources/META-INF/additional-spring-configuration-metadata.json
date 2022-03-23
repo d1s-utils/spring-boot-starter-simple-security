@@ -2,7 +2,7 @@
   "properties": [
     {
       "name": "simple-security.enabled",
-      "type": "java.lang.String",
+      "type": "java.lang.Boolean",
       "description": "Whether to enable simple security.",
       "sourceType": "dev.d1s.security.properties.SimpleSecurityConfigurationProperties",
       "defaultValue": true
