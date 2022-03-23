@@ -1,5 +1,6 @@
 package dev.d1s.security.autoconfiguration
 
+import dev.d1s.security.controller.advice.ExceptionHandlerControllerAdvice
 import dev.d1s.security.service.impl.SimpleAuthorizationServiceImpl
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
@@ -13,4 +14,7 @@ public class SimpleSecurityAutoConfiguration {
     @Bean
     @ConditionalOnMissingBean
     internal fun simpleAuthorizationService() = SimpleAuthorizationServiceImpl()
+
+    @Bean
+    internal fun exceptionHandlerControllerAdvice() = ExceptionHandlerControllerAdvice()
 }
