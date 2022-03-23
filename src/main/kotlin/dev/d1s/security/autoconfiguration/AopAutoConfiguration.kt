@@ -8,7 +8,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy
 
 @Configuration
 @EnableAspectJAutoProxy
-@ConditionalOnProperty("simple-security.enabled")
+@ConditionalOnProperty("simple-security.enabled", matchIfMissing = true)
 public class AopAutoConfiguration {
 
     @Bean

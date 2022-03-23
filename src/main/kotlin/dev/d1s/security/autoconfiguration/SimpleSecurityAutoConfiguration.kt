@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
 @Configuration
-@ConditionalOnProperty("simple-security.enabled")
+@ConditionalOnProperty("simple-security.enabled", matchIfMissing = true)
 public class SimpleSecurityAutoConfiguration {
 
     @Bean
