@@ -1,9 +1,8 @@
 package dev.d1s.security.autoconfiguration
 
-import org.springframework.boot.context.properties.EnableConfigurationProperties
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan
 import org.springframework.context.annotation.Configuration
-import dev.d1s.security.properties.SimpleSecurityConfigurationProperties
 
 @Configuration
-@EnableConfigurationProperties(SimpleSecurityConfigurationProperties::class)
+@ConfigurationPropertiesScan(basePackages = ["dev.d1s.security.properties"])
 public class ConfigurationPropertiesAutoConfiguration

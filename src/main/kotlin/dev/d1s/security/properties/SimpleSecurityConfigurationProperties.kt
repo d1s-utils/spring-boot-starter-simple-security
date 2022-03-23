@@ -8,5 +8,5 @@ import javax.validation.constraints.NotBlank
 @ConfigurationProperties("simple-security")
 internal class SimpleSecurityConfigurationProperties(
     var enabled: Boolean = true,
-    @NotBlank var authenticationSecret: String? =  null
+    @NotBlank var authenticationSecret: String? = null
 )
