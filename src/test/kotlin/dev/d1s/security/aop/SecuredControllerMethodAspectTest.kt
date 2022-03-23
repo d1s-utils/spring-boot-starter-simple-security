@@ -1,6 +1,13 @@
 package dev.d1s.security.aop
 
 import com.ninjasquad.springmockk.MockkBean
+import dev.d1s.security.exception.AuthenticationException
+import dev.d1s.security.service.SimpleAuthorizationService
+import dev.d1s.teabag.testing.constant.INVALID_STUB
+import dev.d1s.teabag.testing.constant.VALID_STUB
+import dev.d1s.teabag.testing.mockRequest
+import dev.d1s.teabag.web.currentRequest
+import dev.d1s.teabag.web.headers
 import io.mockk.every
 import io.mockk.mockkStatic
 import io.mockk.verify
@@ -10,15 +17,7 @@ import org.junit.jupiter.api.assertDoesNotThrow
 import org.junit.jupiter.api.assertThrows
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.security.authentication.BadCredentialsException
 import org.springframework.test.context.ContextConfiguration
-import dev.d1s.security.exception.AuthorizationHeaderNotFoundException
-import dev.d1s.security.service.SimpleAuthorizationService
-import dev.d1s.teabag.testing.constant.INVALID_STUB
-import dev.d1s.teabag.testing.constant.VALID_STUB
-import dev.d1s.teabag.testing.mockRequest
-import dev.d1s.teabag.web.currentRequest
-import dev.d1s.teabag.web.headers
 
 @SpringBootTest
 @ContextConfiguration(classes = [SecuredControllerMethodAspect::class])
@@ -38,7 +37,7 @@ internal class SecuredControllerMethodAspectTest {
     fun setup() {
         every {
             simpleAuthorizationService.validateAuthentication(INVALID_STUB)
-        } throws BadCredentialsException(VALID_STUB)
+        } throws AuthenticationException(VALID_STUB)
     }
 
     @Test
@@ -63,13 +62,13 @@ internal class SecuredControllerMethodAspectTest {
     }
 
     @Test
-    fun `should throw AuthorizationHeaderNotFoundException`() {
+    fun `should throw AuthenticationException`() {
         mockCurrentRequestAndHeaders {
             every {
                 currentRequest.headers[AUTHORIZATION_HEADER]
             } returns null
 
-            assertThrows<AuthorizationHeaderNotFoundException> {
+            assertThrows<AuthenticationException> {
                 securedControllerMethodAspect.beforeSecuredMethodExecution()
             }
 
@@ -81,7 +80,7 @@ internal class SecuredControllerMethodAspectTest {
 
     private inline fun mockCurrentRequestAndHeaders(block: () -> Unit) {
         mockkStatic("dev.d1s.teabag.web.CurrentRequestKt") {
-            mockkStatic("dev.d1s.teabag.web.HeadersKt") {
+            mockkStatic("dev.d1s.teabag.web.HttpServletRequestExtKt") {
                 every {
                     currentRequest
                 } returns mockRequest

@@ -1,6 +1,7 @@
 package dev.d1s.security.service
 
 import com.ninjasquad.springmockk.MockkBean
+import dev.d1s.security.exception.AuthenticationException
 import dev.d1s.security.properties.SimpleSecurityConfigurationProperties
 import dev.d1s.security.service.impl.SimpleAuthorizationServiceImpl
 import dev.d1s.teabag.testing.constant.INVALID_STUB
@@ -13,7 +14,6 @@ import org.junit.jupiter.api.assertDoesNotThrow
 import org.junit.jupiter.api.assertThrows
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.security.authentication.BadCredentialsException
 import org.springframework.test.context.ContextConfiguration
 
 @SpringBootTest
@@ -43,8 +43,8 @@ class SimpleAuthorizationServiceImplTest {
     }
 
     @Test
-    fun `should throw BadCredentialsException`() {
-        assertThrows<BadCredentialsException> {
+    fun `should throw AuthenticationException`() {
+        assertThrows<AuthenticationException> {
             simpleAuthorizationServiceImpl.validateAuthentication(INVALID_STUB)
         }
 

@@ -25,7 +25,6 @@ val striktVersion: String by project
 dependencies {
     implementation("dev.d1s.teabags:teabag-spring-web:$teabagsVersion")
     implementation("org.springframework.boot:spring-boot-starter-aop")
-    implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")

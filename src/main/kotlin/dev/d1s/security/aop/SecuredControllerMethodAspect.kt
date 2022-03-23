@@ -1,13 +1,13 @@
 package dev.d1s.security.aop
 
+import dev.d1s.security.exception.AuthenticationException
+import dev.d1s.security.service.SimpleAuthorizationService
+import dev.d1s.teabag.web.currentRequest
+import dev.d1s.teabag.web.headers
 import org.aspectj.lang.annotation.Aspect
 import org.aspectj.lang.annotation.Before
 import org.aspectj.lang.annotation.Pointcut
 import org.springframework.beans.factory.annotation.Autowired
-import dev.d1s.security.exception.AuthorizationHeaderNotFoundException
-import dev.d1s.security.service.SimpleAuthorizationService
-import dev.d1s.teabag.web.currentRequest
-import dev.d1s.teabag.web.headers
 
 @Aspect
 internal class SecuredControllerMethodAspect {
@@ -29,6 +29,6 @@ internal class SecuredControllerMethodAspect {
 
         request.headers[AUTHORIZATION_HEADER]?.let {
             simpleAuthorizationService.validateAuthentication(it)
-        } ?: throw AuthorizationHeaderNotFoundException
+        } ?: throw AuthenticationException("Authorization header is not present in the request.")
     }
 }
