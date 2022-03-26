@@ -2,7 +2,7 @@ package dev.d1s.security.controller.advice
 
 import dev.d1s.security.exception.AuthenticationException
 import dev.d1s.teabag.testing.constant.VALID_STUB
-import dev.d1s.teabag.testing.mockResponse
+import dev.d1s.teabag.testing.spring.http.mockResponse
 import io.mockk.spyk
 import io.mockk.verify
 import org.junit.jupiter.api.Test
