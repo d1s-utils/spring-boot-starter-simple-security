@@ -11,7 +11,7 @@ internal class SimpleAuthorizationServiceImpl : SimpleAuthorizationService {
     private lateinit var simpleSecurityConfigurationProperties: SimpleSecurityConfigurationProperties
 
     override fun validateAuthentication(credentials: String) {
-        if (credentials != simpleSecurityConfigurationProperties.authenticationSecret!!) {
+        if (credentials != simpleSecurityConfigurationProperties.authenticationSecret) {
             throw AuthenticationException("Provided credentials are not valid.")
         }
     }

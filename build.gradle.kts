@@ -10,7 +10,7 @@ plugins {
 }
 
 group = "dev.d1s"
-version = "2.0.16-stable.0"
+version = "2.0.17-stable.0"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
@@ -21,12 +21,14 @@ repositories {
 val teabagsVersion: String by project
 val springMockkVersion: String by project
 val striktVersion: String by project
+val adviceStarterVersion: String by project
 
 dependencies {
     implementation("dev.d1s.teabags:teabag-spring-web:$teabagsVersion")
     implementation("org.springframework.boot:spring-boot-starter-aop")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-validation")
+    implementation("dev.d1s:spring-boot-starter-advice:$adviceStarterVersion")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
@@ -53,6 +55,7 @@ tasks.withType<Test> {
 }
 
 tasks.withType<JavaCompile> {
+    @Suppress("UnstableApiUsage")
     inputs.files(tasks.withType<ProcessResources>())
 }
 

@@ -12,5 +12,6 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy
 public class AopAutoConfiguration {
 
     @Bean
-    internal fun securedControllerMethodAspect() = SecuredControllerMethodAspect()
+    internal fun securedControllerMethodAspect() =
+        SecuredControllerMethodAspect()
 }
