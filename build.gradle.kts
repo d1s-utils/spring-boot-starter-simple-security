@@ -10,7 +10,7 @@ plugins {
 }
 
 group = "dev.d1s"
-version = "2.0.17-stable.0"
+version = "2.0.17-stable.1"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
@@ -34,7 +34,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
     testImplementation("dev.d1s.teabags:teabag-testing:$teabagsVersion")
-    testImplementation("dev.d1s.teabags:teabag-testing-spring:$teabagsVersion")
+    testImplementation("dev.d1s.teabags:teabag-testing-spring-web:$teabagsVersion")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("com.ninja-squad:springmockk:$springMockkVersion")
     testImplementation("io.strikt:strikt-jvm:$striktVersion")

@@ -5,7 +5,7 @@ import dev.d1s.security.exception.AuthenticationException
 import dev.d1s.security.service.SimpleAuthorizationService
 import dev.d1s.teabag.testing.constant.INVALID_STUB
 import dev.d1s.teabag.testing.constant.VALID_STUB
-import dev.d1s.teabag.testing.spring.http.mockRequest
+import dev.d1s.teabag.testing.spring.web.http.mockRequest
 import dev.d1s.teabag.web.currentRequest
 import dev.d1s.teabag.web.headers
 import io.mockk.every
